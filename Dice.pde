@@ -1,4 +1,31 @@
 Dice bob;
+void setup()
+{
+  background(17,130,79);
+  size(800, 450);
+  noLoop();
+}
+void draw()
+{
+  background(17,130,79);
+  int sum=0;
+  for(int y=0;y<401;y=y+40){
+  for(int x=0;x<401;x=x+40){
+  bob = new Dice(x, y);
+  bob.show();
+  bob.roll();
+  sum = sum + bob.face;
+  
+  
+}
+  }
+  textSize(50);
+   text("Total: " +sum,500,250);
+}
+void mousePressed() {
+  redraw();
+}
+
 class Dice 
 {
   int myX, myY, mySize, face;
@@ -14,7 +41,7 @@ class Dice
     if (face == 1) {
       fill(0);
       ellipse(myX+20, myY+20, 7, 7);
-    } else if (face == 2) {
+    } else if (face ==2) {
       fill(0);
       ellipse(myX+10, myY+10, 7, 7);
       ellipse(myX+30, myY+30, 7, 7);
@@ -53,29 +80,4 @@ class Dice
   }
 }
 
-
-
-void setup()
-{
-  background(17,130,79);
-  size(800, 500);
-  noLoop();
-}
-void draw()
-{
-  background(17,130,79);
-  int sum=0;
-  for(int y=0;y<401;y=y+40){
-  for(int x=0;x<401;x=x+40){
-  bob = new Dice(x, y);
-   bob.show();
-   bob.roll();
-  sum = sum + bob.roll;
-}
-  }
-   text("Total: " +sum,500,100);
-}
-void mousePressed() {
-  redraw();
-}
 
