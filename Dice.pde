@@ -1,35 +1,35 @@
 Dice bob;
 class Dice 
 {
-  int myX, myY, mySize, roll;
+  int myX, myY, mySize, face;
   Dice(int x, int y)
   {
-    roll = (int)(Math.random()*6)+1;
+    face = (int)(Math.random()*6)+1;
     myX = x;
     myY = y;
     mySize =40;
   }
   void roll() 
   {
-    if (roll == 1) {
+    if (face == 1) {
       fill(0);
       ellipse(myX+20, myY+20, 7, 7);
-    } else if (roll ==2) {
+    } else if (face == 2) {
       fill(0);
       ellipse(myX+10, myY+10, 7, 7);
       ellipse(myX+30, myY+30, 7, 7);
-    } else if (roll == 3) {
+    } else if (face == 3) {
       fill(0);
       ellipse(myX+10, myY+10, 7, 7);
       ellipse(myX+20, myY+20, 7, 7);
       ellipse(myX+30, myY+30, 7, 7);
-    } else if (roll == 4) {
+    } else if (face == 4) {
       fill(0);
       ellipse(myX+10, myY+10, 7, 7);
       ellipse(myX+30, myY+10, 7, 7);
       ellipse(myX+10, myY+30, 7, 7);
       ellipse(myX+30, myY+30, 7, 7);
-    } else if (roll == 5) {
+    } else if (face == 5) {
       fill(0);
       ellipse(myX+10, myY+10, 7, 7);
       ellipse(myX+30, myY+10, 7, 7);
@@ -58,7 +58,7 @@ class Dice
 void setup()
 {
   background(17,130,79);
-  size(800, 400);
+  size(800, 500);
   noLoop();
 }
 void draw()
@@ -71,8 +71,6 @@ void draw()
   bob.show();
   bob.roll();
   sum = sum + bob.roll;
-  
-  
 }
   }
    text("Total: " +sum,500,100);
