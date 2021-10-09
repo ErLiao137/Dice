@@ -68,8 +68,8 @@ void draw()
   for(int y=0;y<401;y=y+40){
   for(int x=0;x<401;x=x+40){
   bob = new Dice(x, y);
-  bob.roll();
    bob.show();
+   bob.roll();
   sum = sum + bob.roll;
 }
   }
